@@ -8,12 +8,24 @@
 body { margin: 0; font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto; background: var(--cw-bg); }
 
 .cw-root { display: flex; flex-direction: column; height: 100vh; }
-.cw-header { display:flex; align-items:center; justify-content:space-between; padding:12px; border-bottom:1px solid var(--cw-border); background:#fff; position:sticky; top:0; }
+
+/* Header nền trắng, bo góc nhẹ */
+.cw-header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px; border-bottom:1px solid var(--cw-border);
+  background:#fff;
+}
 .cw-brand { display:flex; gap:10px; align-items:center; }
-.cw-avatar { width:32px; height:32px; display:grid; place-items:center; border-radius:50%; background:#f3f4f6; }
+
+/* Avatar dùng img: bo tròn + nền trắng + viền nhẹ */
+.cw-avatar {
+  width:32px; height:32px; border-radius:50%;
+  padding:4px; background:#fff; border:1px solid var(--cw-border);
+  object-fit: contain; display:block;
+}
 .cw-title { font-weight:600; }
 .cw-sub { font-size:12px; color: var(--cw-muted); }
-#cw-close { border:0; background:transparent; font-size:20px; cursor:pointer; line-height:1; }
+#cw-close { border:0; background:transparent; font-size:20px; cursor:pointer; line-height:1; color:#6b7280; }
 
 .cw-messages { padding: 12px; gap:10px; display:flex; flex-direction:column; overflow:auto; height: 100%; }
 .cw-bubble { max-width: 85%; padding:10px 12px; border-radius:14px; border:1px solid var(--cw-border); background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.02); }
@@ -31,3 +43,4 @@ body { margin: 0; font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto; bac
 .cw-typing span:nth-child(2){ animation-delay: .2s; }
 .cw-typing span:nth-child(3){ animation-delay: .4s; }
 @keyframes blink { 0%, 80%, 100% { opacity: .2 } 40% { opacity: 1 } }
+
